@@ -222,6 +222,32 @@
                     $('#form')[0].reset();
                     alert('Reset berhasil!')
                 })
+               
+               /* Auto Reject Keyboard */
+                $( "#name" ).keypress(function(e) {
+                    var key = e.keyCode;
+                    if ((key < 65 && key < 92) || (key > 90 && key <97) || key>122 ) {  // 0-9
+                        e.preventDefault();
+                    }
+                   
+                });
+
+
+                $( "#nik" ).keypress(function(e) {
+                    var keyZ = e.keyCode;
+                    if ((keyZ < 48 && keyZ < 57)|| keyZ>57 ) {  // 0-9
+                        e.preventDefault();
+                    }
+                   
+                });
+
+                $( "#noBatch" ).keypress(function(e) {
+                    var keyZ = e.keyCode;
+                    if ((keyZ<48||(keyZ>57 && keyZ <68)||(keyZ > 90 && keyZ < 97)|| keyZ > 122)) {  // 0-9
+                        e.preventDefault();
+                    }
+                   
+                });
             })
             </script>
 
